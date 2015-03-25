@@ -23,10 +23,6 @@
 			{{ page.content }}
 		</div>
 
-        {% if config.plugins.breadcrumbs.enabled %}
-            {% include 'breadcrumbs.html.twig' %}
-        {% endif %}
-
 		<div class="content-wrapper blog-content-list grid pure-g-r">
 			<div id="listing" class="block pure-u-2-3">
 				{% for child in collection %}
