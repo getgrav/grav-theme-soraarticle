@@ -12,32 +12,55 @@
         {% set feed_url = base_url~'/'~page.slug %}
     {% endif  %}
 
-	{% block content %}
-		{% set blog_image = page.media.images|first.grayscale().contrast(20).brightness(-100).colorize(-35,81,122) %}
+    {% block content %}
 
-		{% if blog_image %}
-		<div class="flush-top blog-header blog-header-image" style="background-image: url({{ blog_image.url }});">
-		{% else %}
-		<div class="blog-header">
-		{% endif %}
-			{{ page.content }}
-		</div>
+        {{ page.content }}
+        <div class="with-sidebar-wrapper gdlr-right-sidebar">
+            <div class="with-sidebar-container container">
 
-		<div class="content-wrapper blog-content-list grid pure-g-r">
-			<div id="listing" class="block pure-u-2-3">
-				{% for child in collection %}
-			        {% include 'partials/blog_item.html.twig' with {'page':child, 'truncate':true} %}
-			    {% endfor %}
+                <div class="with-sidebar-left eight columns">
+                    <div class="with-sidebar-content twelve columns">
+                        <div id="content-section-2">
+                            <div class="section-container container"><div class="blog-item-wrapper gdlr-blog-full-type">
+                                <div class="blog-item-holder">
+                                    <div class="main section" id="main"><div class="widget Blog" id="Blog1">
+                                        <div class="blog-posts hfeed">
+                                            <div class="date-outer">
+                                                <div class="date-posts">
+                                                    {% for child in collection %}
+                                                     {% include 'partials/blog_item.html.twig' with {'page':child, 'truncate':true} %}
+                                                 {% endfor %}
 
-                {% if config.plugins.pagination.enabled and collection.params.pagination %}
-                    {% include 'pagination.html.twig' with {'pagination':collection.params.pagination} %}
-                {% endif %}
-			</div>
-			<div id="sidebar" class="block size-1-3 pure-u-1-3">
-				{% include 'partials/sidebar.html.twig' %}
-			</div>
-		</div>
-	{% endblock %}
+                                                 {% if config.plugins.pagination.enabled and collection.params.pagination %}
+                                                    {% include 'pagination.html.twig' with {'pagination':collection.params.pagination} %}
+                                                {% endif %}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+
+    <div class="gdlr-sidebar gdlr-right-sidebar four1 columns">
+        <div class="gdlr-item-start-content sidebar-right-item">
+            <div class="section" id="swid">
+                {% include 'partials/sidebar.html.twig' %}
+            </div>
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+</div>
+{% endblock %}
 
 {% endembed %}
 

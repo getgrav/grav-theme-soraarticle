@@ -1,66 +1,116 @@
-<div class="list-item">
-
-    <div class="list-blog-header">
-        <span class="list-blog-date">
-            <span>{{ page.date|date("d") }}</span>
-            <em>{{ page.date|date("M") }}</em>
-        </span>
-        {% if page.header.link %}
-            <h4>
-                {% if page.header.continue_link is not sameas(false) %}
-                <a href="{{ page.url }}"><i class="fa fa-angle-double-right"></i></a>
-                {% endif %}
-                <a href="{{ page.header.link }}">{{ page.title }}</a>
-            </h4>
+<div class="post-outer">
+ <div class="gdlr-item gdlr-blog-full ">
+  <div class="gdlr-ux gdlr-blog-full-ux">
+   <article class="post type-post status-publish format-standard has-post-thumbnail hentry">
+    <div class="gdlr-standard-style">
+     <div class="blog-date-wrapper gdlr-title-font">
+      <i class="icon-calendar-empty"></i>
+      <div class="blog-date-day">
+       <script type="text/javascript">document.write(date_dd);</script>2
+     </div>
+     <div class="blog-date-month">
+       <script type="text/javascript">document.write(date_mmm);</script>Aug
+     </div>
+     <div class="blog-date-year">
+       <script type="text/javascript">document.write(date_yyyy);</script> 2014
+     </div>
+   </div>
+   <div id="2297314009206748142">
+    <div class="blog-content-wrapper">
+     <div class="gdlr-blog-thumbnail">
+       
+       {% if big_header %}
+        {{ page.media.images|first.cropResize(900,600).html }}
         {% else %}
-            <h4><a href="{{ page.url }}">{{ page.title }}</a></h4>
-        {% endif %}
+        {{ page.media.images|first.cropZoom(900,300).html }}
+      {% endif %}
+
+
+
+      <div class="gdlr-sticky-banner">12:33 AM</div>
+    </div>
+    <div class="blog-content-inner-wrapper">
+      <header class="post-header">
+
+       {% if page.header.link %}
+        <h3 class="gdlr-blog-title">
+          {% if page.header.continue_link is not sameas(false) %}
+            <a href="{{ page.url }}"><i class="fa fa-angle-double-right"></i></a>
+          {% endif %}
+          <a href="{{ page.header.link }}">{{ page.title }}</a>
+        </h3>
+        {% else %}
+        <h3 class="gdlr-blog-title"><a href="{{ page.url }}">{{ page.title }}</a></h3>
+      {% endif %}
+
+      <div class="gdlr-blog-info gdlr-title-font gdlr-info">
 
         {% if page.taxonomy.tag %}
-        <span class="tags">
-            {% for tag in page.taxonomy.tag %}
-            <a href="{{ base_url }}/tag:{{ tag }}">{{ tag }}</a>
-            {% endfor %}
-        </span>
-        {% endif %}
-        {% if big_header %}
-            {{ page.media.images|first.cropResize(900,600).html }}
-        {% else %}
-            {{ page.media.images|first.cropZoom(900,300).html }}
-        {% endif %}
+         <div class="blog-info blog-tag"><i class="icon-tags"></i>
+          {% for tag in page.taxonomy.tag %}
+            <a href="{{ base_url }}/tag:{{ tag }}" rel="tag">{{ tag }}</a>
+          {% endfor %}
+        </div>
+      {% endif %}
 
+      <div class="blog-info blog-author"><i class="icon-user"></i><a href="https://plus.google.com/104219125408123734587" title="Posts by Sora Templates" rel="author">Sora Templates</a></div>
+      <span class="gdlr-seperator">/</span>
+      <div class="blog-info blog-comments"><i class="icon-comments-alt"></i><a href="http://sora-article-soratemplates.blogspot.in/2014/08/sedial-eiusmod-tempor_2.html">0 Comments</a></div>
+      <div class="clear"></div>
     </div>
+  </header>
+  <!-- entry-header -->
+  <div class="gdlr-blog-content">
+   {% if page.header.continue_link is sameas(false) %}
+    <p>{{ page.content }}</p>
+    {% if not truncate %}
+      {% set show_prev_next = true %}
+      {% endif %}
+      {% elseif truncate and page.summary != page.content %}
+      <p>{{ page.summary }}</p>
+      <p><a href="{{ page.url }}" class="more-link">Continue Reading...</a></p>
+      {% elseif truncate %}
+      <p>{{ page.content|truncate(550) }}</p>
+      <p><a href="{{ page.url }}" class="more-link">Continue Reading...</a></p>
+      {% else %}
+      <p>{{ page.content }}</p>
+      {% set show_prev_next = true %}
+      {% endif %}
 
-    <div class="list-blog-padding">
-
-    {% if page.header.continue_link is sameas(false) %}
-        <p>{{ page.content }}</p>
-        {% if not truncate %}
-        {% set show_prev_next = true %}
-        {% endif %}
-    {% elseif truncate and page.summary != page.content %}
-        <p>{{ page.summary }}</p>
-        <p><a href="{{ page.url }}">Continue Reading...</a></p>
-    {% elseif truncate %}
-        <p>{{ page.content|truncate(550) }}</p>
-        <p><a href="{{ page.url }}">Continue Reading...</a></p>
-    {% else %}
-        <p>{{ page.content }}</p>
-        {% set show_prev_next = true %}
-    {% endif %}
-
-    {% if show_prev_next %}
+      {% if show_prev_next %}
 
         <p class="prev-next">
-            {% if not page.isFirst %}
-                <a class="button" href="{{ page.nextSibling.url }}"><i class="fa fa-chevron-left"></i> Next Post</a>
-            {% endif %}
+          {% if not page.isFirst %}
+            <a class="button" href="{{ page.nextSibling.url }}"><i class="fa fa-chevron-left"></i> Next Post</a>
+          {% endif %}
 
-            {% if not page.isLast %}
-                <a class="button" href="{{ page.prevSibling.url }}">Previous Post <i class="fa fa-chevron-right"></i></a>
-            {% endif %}
+          {% if not page.isLast %}
+            <a class="button" href="{{ page.prevSibling.url }}">Previous Post <i class="fa fa-chevron-right"></i></a>
+          {% endif %}
         </p>
-    {% endif %}
+      {% endif %}
 
+      <div class="gdlr-social-share">
+        <a href="http://digg.com/submit?url=http://sora-article-soratemplates.blogspot.in/2014/08/sedial-eiusmod-tempor_2.html&amp;title=Sedial eiusmod tempor" target="_blank"><img src="http://themes.goodlayers2.com/simplearticle/wp-content/themes/simplearticle/images/dark/social-share/digg.png" alt="digg-share" width="112" height="112"></a><a href="http://www.facebook.com/share.php?u=http://sora-article-soratemplates.blogspot.in/2014/08/sedial-eiusmod-tempor_2.html" target="_blank"><img src="http://themes.goodlayers2.com/simplearticle/wp-content/themes/simplearticle/images/dark/social-share/facebook.png" alt="facebook-share" width="112" height="112"></a><a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http://sora-article-soratemplates.blogspot.in/2014/08/sedial-eiusmod-tempor_2.html&amp;title=Sedial eiusmod tempor" target="_blank"><img src="http://themes.goodlayers2.com/simplearticle/wp-content/themes/simplearticle/images/dark/social-share/linkedin.png" alt="linked-share" width="112" height="112"></a><a href="http://www.tumblr.com/share/link?url=http://sora-article-soratemplates.blogspot.in/2014/08/sedial-eiusmod-tempor_2.html&amp;name=Sedial eiusmod tempor" target="_blank"><img src="http://themes.goodlayers2.com/simplearticle/wp-content/themes/simplearticle/images/dark/social-share/tumblr.png" alt="tumblr-share" width="112" height="112"></a><a href="http://reddit.com/submit?url=http://sora-article-soratemplates.blogspot.in/2014/08/sedial-eiusmod-tempor_2.html&amp;title=Sedial eiusmod tempor" target="_blank"><img src="http://themes.goodlayers2.com/simplearticle/wp-content/themes/simplearticle/images/dark/social-share/reddit.png" alt="reddit-share" width="112" height="112"></a><a href="http://www.stumbleupon.com/submit?url=http://sora-article-soratemplates.blogspot.in/2014/08/sedial-eiusmod-tempor_2.html&amp;title=Sedial eiusmod tempor" target="_blank"><img src="http://themes.goodlayers2.com/simplearticle/wp-content/themes/simplearticle/images/dark/social-share/stumble-upon.png" alt="stumble-upon-share" width="112" height="112"></a><a href="http://twitter.com/home?status=Sedial eiusmod tempor-http://sora-article-soratemplates.blogspot.in/2014/08/sedial-eiusmod-tempor_2.html" target="_blank"><img src="http://themes.goodlayers2.com/simplearticle/wp-content/themes/simplearticle/images/dark/social-share/twitter.png" alt="twitter-share" width="112" height="112"></a>
+        <div class="clear"></div>
+      </div>
     </div>
+  </div>
+</div>
+</div>
+<script type="text/javascript">
+var post_title="Sedial eiusmod tempor",
+post_url="http://sora-article-soratemplates.blogspot.in/2014/08/sedial-eiusmod-tempor_2.html",
+author_name="Sora Templates",
+author_url="https://plus.google.com/104219125408123734587",
+comment="0",
+label="<a href='http://sora-article-soratemplates.blogspot.in/search/label/Fun?max-results=6' rel='tag'>Fun</a>,&nbsp;<a href='http://sora-article-soratemplates.blogspot.in/search/label/World?max-results=6' rel='tag'>World</a>",
+time="12:33 AM";
+readmore("2297314009206748142");
+</script>
+<div class="clear"></div>
+</div>
+</article>
+</div>
+</div>
 </div>

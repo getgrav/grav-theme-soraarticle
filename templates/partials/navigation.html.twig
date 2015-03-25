@@ -1,45 +1,29 @@
-{% macro loop(page) %}
-    {% for p in page.children %}
-        {% if p.visible %}
-            {% set current_page = (p.active or p.activeChild) ? 'active' : '' %}
-            <li class="{{ current_page }}">
-                <a href="{{ p.url }}">
-                    {% if p.header.icon %}<i class="fa fa-{{ p.header.icon }}"></i>{% endif %}
-                    {{ p.menu }}
-                </a>
-                {% if p.children.count > 0 %}
-                    <ul>
-                        {{ _self.loop(p) }}
-                    </ul>
-                {% endif %}
-            </li>
-        {% endif %}
-    {% endfor %}
-{% endmacro %}
-
-<ul class="navigation">
-    {% if config.themes.soraarticle.dropdown.enabled %}
-        {{ _self.loop(pages) }}
-    {% else %}
-        {% for page in pages.children %}
-            {% if page.visible %}
-                {% set current_page = (page.active or page.activeChild) ? 'active' : '' %}
-                <li class="{{ current_page }}">
-                    <a href="{{ page.url }}">
-                        {% if page.header.icon %}<i class="fa fa-{{ page.header.icon }}"></i>{% endif %}
-                        {{ page.menu }}
-                    </a>
-                </li>
-            {% endif %}
+<div class='gdlr-navigation-outer-wrapper' id='gdlr-navigation-outer-wrapper'>
+    <div class='gdlr-navigation-container container'>
+        <div class='gdlr-navigation-gimmick' id='gdlr-navigation-gimmick'></div>
+        <div class='gdlr-navigation-wrapper'><nav class='gdlr-navigation' id='gdlr-main-navigation' role='navigation'>
+            <ul class='sf-menu gdlr-main-menu' id='menu-main-menu-1'>
+           {% for item in site.mainmenu %}
+            <li class='menu-item menu-item-type-post_type gdlr-normal-menu'><a href='{{ item.url }}'>{{ item.text }}</a></li>
         {% endfor %}
-    {% endif %}
-    {% for mitem in site.menu %}
-        <li>
-            <a href="{{ mitem.url }}">
-                {% if mitem.icon %}<i class="fa fa-{{ mitem.icon }}"></i>{% endif %}
-                {{ mitem.text }}
-            </a>
-        </li>
-    {% endfor %}
-</ul>           
-
+    </ul></nav>
+    <div class='top-search-button' id='top-search-button'>
+        <i class='icon-search'></i>
+    </div>
+    <div class='clear'></div></div>
+    <div class='clear'></div>
+</div>
+</div>
+<div id='gdlr-navigation-substitute'></div>
+<div class='gdlr-nav-search-form' id='gdlr-nav-search-form'>
+    <div class='gdlr-nav-search-container container'>
+        <form action='/search' method='get'>
+            <i class='icon-search'></i>
+            <input class='style-2' id='searchsubmit2' type='submit' value=''/>
+            <div class='search-text' id='search-text2'>
+                <input autocomplete='off' data-default='Type keywords...' name='q' type='text' value=''/><input type='hidden' value='max-results=6'/>
+            </div>
+            <div class='clear'></div>
+        </form>
+    </div>
+</div>
