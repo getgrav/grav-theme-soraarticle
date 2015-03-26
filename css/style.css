@@ -716,7 +716,7 @@ table.style-2 tr td{ border-bottom-width: 0px; }
 /*--- block quote ---*/
 blockquote{ font-size: 25px; font-style: italic; margin-bottom: 35px;
     line-height: 1.4; padding: 10px 20px 0px 90px; border-top-width: 0px; border-bottom-width: 0px; 
-    background-size: 37px 35px; background-position: 18px 15px; background-image: url('images/dark/quote.png'); 
+    background-size: 37px 35px; background-position: 18px 15px; background-image: url('../images/quote.png'); 
     letter-spacing: 1px; background-repeat: no-repeat; }
 blockquote.gdlr-align-left{ width: 33%; float: left; margin-right: 20px; margin-bottom: 20px; }
 blockquote.gdlr-align-right{ width: 33%; float: right; margin-right: 20px; margin-bottom: 20px; }
@@ -879,8 +879,8 @@ body .ls-v5 .ls-nav-next { right: 20px; }
 /* -- Master slider style modification --*/
 body .ms-skin-default .ms-nav-prev,
 body .ms-skin-default .ms-nav-next{ width: 27px; height: 46px; margin-top: -13px; }
-body .ms-skin-default .ms-nav-prev{ background: url('images/master-slider-left.png'); }
-body .ms-skin-default .ms-nav-next{ background: url('images/master-slider-right.png'); }
+body .ms-skin-default .ms-nav-prev{ background: url('../images/master-slider-left.png'); }
+body .ms-skin-default .ms-nav-next{ background: url('../images/master-slider-right.png'); }
 body .ms-skin-default .ms-bullet { background-image: none; ;
     border-width: 2px; border-style: solid; border-color: #ffffff
     -moz-border-radius: 50%; -webkit-border-radius: 50%; border-radius: 50%; 
@@ -2952,7 +2952,7 @@ html .woocommerce .quantity .minus, html .woocommerce #content .quantity .minus,
 .ms-slide .ms-slide-loading {
     width: 36px;
     height: 36px;
-    background: url(common/loading-2.gif) no-repeat center white;
+    background: url(../images/loading-2.gif) no-repeat center white;
     border-radius: 60px;
     box-shadow: 0px 0px 3px rgba(0,0,0,0.2);
     position: absolute;
@@ -2965,10 +2965,10 @@ html .woocommerce .quantity .minus, html .woocommerce #content .quantity .minus,
 
 /* grab cursor */
 .ms-def-cursor{cursor:auto !important;}
-.ms-grab-cursor{cursor: url(common/grab.png), move;}
-.ms-grabbing-cursor{cursor: url(common/grabbing.png), move;}
-.ms-ie .ms-grab-cursor{cursor: url(common/grab.cur), move;}
-.ms-ie .ms-grabbing-cursor {cursor: url(common/grabbing.cur), move;}
+.ms-grab-cursor{cursor: url(../images/grab.png), move;}
+.ms-grabbing-cursor{cursor: url(../images/grabbing.png), move;}
+.ms-ie .ms-grab-cursor{cursor: url(../images/grab.cur), move;}
+.ms-ie .ms-grabbing-cursor {cursor: url(../images/grabbing.cur), move;}
 
 .ms-view { 
     margin:0px auto;
@@ -3153,7 +3153,7 @@ html .woocommerce .quantity .minus, html .woocommerce #content .quantity .minus,
     font-family: sans-serif;
     font-size: 0.75em;
     display: inline-block;
-    background: url(common/video-close-btn.png) no-repeat 0px 3px;
+    background: url(../images/video-close-btn.png) no-repeat 0px 3px;
     padding-left: 15px;
     height: 15px;
     color: #DBDBDB;
