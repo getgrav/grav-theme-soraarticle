@@ -12,8 +12,7 @@
     {% endif  %}
 
 	{% block content %}
-		{% include 'breadcrumbs.html.twig' %}
-		
+        {% block masterslider %}{% endblock %}
 		<div class="blog-content-item grid pure-g-r">
 			<div id="item" class="block pure-u-2-3">
 			    {% include 'partials/blog_item.html.twig' with {'truncate':false,'big_header':true} %}

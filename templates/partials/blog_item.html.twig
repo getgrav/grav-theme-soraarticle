@@ -6,13 +6,13 @@
      <div class="blog-date-wrapper gdlr-title-font">
       <i class="icon-calendar-empty"></i>
       <div class="blog-date-day">
-       <script type="text/javascript">document.write(date_dd);</script>{{ page.date|date("d") }}
-     </div>
-     <div class="blog-date-month">
-       <script type="text/javascript">document.write(date_mmm);</script>{{ page.date|date("M") }}
+        {{ page.date|date("d") }}
+      </div>
+      <div class="blog-date-month">
+       {{ page.date|date("M") }}
      </div>
      <div class="blog-date-year">
-       <script type="text/javascript">document.write(date_yyyy);</script>{{ page.date|date("Y") }}
+       {{ page.date|date("Y") }}
      </div>
    </div>
    <div id="2297314009206748142">
@@ -48,12 +48,12 @@
         {% if page.taxonomy.tag %}
          <div class="blog-info blog-tag"><i class="icon-tags"></i>
           {% for tag in page.taxonomy.tag %}
-            <a href="{{ base_url }}/tag:{{ tag }}" rel="tag">{{ tag }}</a>
+            <a href="{{ base_url }}/tag:{{ tag }}" rel="tag">{{ tag }}{% if not loop.last %}, {% endif %}</a>
           {% endfor %}
         </div>
       {% endif %}
 
-      <div class="blog-info blog-author"><i class="icon-user"></i><a href="https://plus.google.com/104219125408123734587" title="Posts by Sora Templates" rel="author">Sora Templates</a></div>
+      <div class="blog-info blog-author"><i class="icon-user"></i>{{ page.header.author }}</div>
       <span class="gdlr-seperator">/</span>
       <div class="blog-info blog-comments"><i class="icon-comments-alt"></i><a href="{{ page.url(true) }}">0 Comments</a></div>
       <div class="clear"></div>
@@ -98,16 +98,6 @@
   </div>
 </div>
 </div>
-<script type="text/javascript">
-var post_title="{{ page.title }}",
-post_url="{{ page.url(true) }}",
-author_name="Sora Templates",
-author_url="https://plus.google.com/104219125408123734587",
-comment="0",
-label="<a href='http://sora-article-soratemplates.blogspot.in/search/label/Fun?max-results=6' rel='tag'>Fun</a>,&nbsp;<a href='http://sora-article-soratemplates.blogspot.in/search/label/World?max-results=6' rel='tag'>World</a>",
-time="12:33 AM";
-readmore("2297314009206748142");
-</script>
 <div class="clear"></div>
 </div>
 </article>
