@@ -6,13 +6,13 @@
      <div class="blog-date-wrapper gdlr-title-font">
       <i class="icon-calendar-empty"></i>
       <div class="blog-date-day">
-       <script type="text/javascript">document.write(date_dd);</script>2
+       <script type="text/javascript">document.write(date_dd);</script>{{ page.date|date("d") }}
      </div>
      <div class="blog-date-month">
-       <script type="text/javascript">document.write(date_mmm);</script>Aug
+       <script type="text/javascript">document.write(date_mmm);</script>{{ page.date|date("M") }}
      </div>
      <div class="blog-date-year">
-       <script type="text/javascript">document.write(date_yyyy);</script> 2014
+       <script type="text/javascript">document.write(date_yyyy);</script>{{ page.date|date("Y") }}
      </div>
    </div>
    <div id="2297314009206748142">
@@ -27,7 +27,7 @@
 
 
 
-      <div class="gdlr-sticky-banner">12:33 AM</div>
+      <div class="gdlr-sticky-banner">{{ page.date|date("G:i") }} {{ page.date|date("A") }}</div>
     </div>
     <div class="blog-content-inner-wrapper">
       <header class="post-header">
@@ -55,7 +55,7 @@
 
       <div class="blog-info blog-author"><i class="icon-user"></i><a href="https://plus.google.com/104219125408123734587" title="Posts by Sora Templates" rel="author">Sora Templates</a></div>
       <span class="gdlr-seperator">/</span>
-      <div class="blog-info blog-comments"><i class="icon-comments-alt"></i><a href="http://sora-article-soratemplates.blogspot.in/2014/08/sedial-eiusmod-tempor_2.html">0 Comments</a></div>
+      <div class="blog-info blog-comments"><i class="icon-comments-alt"></i><a href="{{ page.url(true) }}">0 Comments</a></div>
       <div class="clear"></div>
     </div>
   </header>
@@ -68,10 +68,10 @@
       {% endif %}
       {% elseif truncate and page.summary != page.content %}
       <p>{{ page.summary }}</p>
-      <p><a href="{{ page.url }}" class="more-link">Continue Reading...</a></p>
+      <p><a href="{{ page.url }}" class="more-link"><span class="gdlr-button with-border excerpt-read-more">Read More</span></a></p>
       {% elseif truncate %}
       <p>{{ page.content|truncate(550) }}</p>
-      <p><a href="{{ page.url }}" class="more-link">Continue Reading...</a></p>
+      <p><a href="{{ page.url }}" class="more-link"><span class="gdlr-button with-border excerpt-read-more">Read More</span></a></p>
       {% else %}
       <p>{{ page.content }}</p>
       {% set show_prev_next = true %}
@@ -91,7 +91,7 @@
       {% endif %}
 
       <div class="gdlr-social-share">
-        <a href="http://digg.com/submit?url=http://sora-article-soratemplates.blogspot.in/2014/08/sedial-eiusmod-tempor_2.html&amp;title=Sedial eiusmod tempor" target="_blank"><img src="http://themes.goodlayers2.com/simplearticle/wp-content/themes/simplearticle/images/dark/social-share/digg.png" alt="digg-share" width="112" height="112"></a><a href="http://www.facebook.com/share.php?u=http://sora-article-soratemplates.blogspot.in/2014/08/sedial-eiusmod-tempor_2.html" target="_blank"><img src="http://themes.goodlayers2.com/simplearticle/wp-content/themes/simplearticle/images/dark/social-share/facebook.png" alt="facebook-share" width="112" height="112"></a><a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http://sora-article-soratemplates.blogspot.in/2014/08/sedial-eiusmod-tempor_2.html&amp;title=Sedial eiusmod tempor" target="_blank"><img src="http://themes.goodlayers2.com/simplearticle/wp-content/themes/simplearticle/images/dark/social-share/linkedin.png" alt="linked-share" width="112" height="112"></a><a href="http://www.tumblr.com/share/link?url=http://sora-article-soratemplates.blogspot.in/2014/08/sedial-eiusmod-tempor_2.html&amp;name=Sedial eiusmod tempor" target="_blank"><img src="http://themes.goodlayers2.com/simplearticle/wp-content/themes/simplearticle/images/dark/social-share/tumblr.png" alt="tumblr-share" width="112" height="112"></a><a href="http://reddit.com/submit?url=http://sora-article-soratemplates.blogspot.in/2014/08/sedial-eiusmod-tempor_2.html&amp;title=Sedial eiusmod tempor" target="_blank"><img src="http://themes.goodlayers2.com/simplearticle/wp-content/themes/simplearticle/images/dark/social-share/reddit.png" alt="reddit-share" width="112" height="112"></a><a href="http://www.stumbleupon.com/submit?url=http://sora-article-soratemplates.blogspot.in/2014/08/sedial-eiusmod-tempor_2.html&amp;title=Sedial eiusmod tempor" target="_blank"><img src="http://themes.goodlayers2.com/simplearticle/wp-content/themes/simplearticle/images/dark/social-share/stumble-upon.png" alt="stumble-upon-share" width="112" height="112"></a><a href="http://twitter.com/home?status=Sedial eiusmod tempor-http://sora-article-soratemplates.blogspot.in/2014/08/sedial-eiusmod-tempor_2.html" target="_blank"><img src="http://themes.goodlayers2.com/simplearticle/wp-content/themes/simplearticle/images/dark/social-share/twitter.png" alt="twitter-share" width="112" height="112"></a>
+        <a href="http://digg.com/submit?url={{ page.url(true) }}&amp;title={{ page.title }}" target="_blank"><img src="{{ theme_url }}/images/digg.png" alt="digg-share" width="112" height="112"></a><a href="http://www.facebook.com/share.php?u={{ page.url(true) }}" target="_blank"><img src="{{ theme_url }}/images/facebook.png" alt="facebook-share" width="112" height="112"></a><a href="http://www.linkedin.com/shareArticle?mini=true&amp;url={{ page.url(true) }}&amp;title={{ page.title }}" target="_blank"><img src="{{ theme_url }}/images/linkedin.png" alt="linked-share" width="112" height="112"></a><a href="http://www.tumblr.com/share/link?url={{ page.url(true) }}&amp;name={{ page.title }}" target="_blank"><img src="{{ theme_url }}/images/tumblr.png" alt="tumblr-share" width="112" height="112"></a><a href="http://reddit.com/submit?url={{ page.url(true) }}&amp;title={{ page.title }}" target="_blank"><img src="{{ theme_url }}/images/reddit.png" alt="reddit-share" width="112" height="112"></a><a href="http://www.stumbleupon.com/submit?url={{ page.url(true) }}&amp;title={{ page.title }}" target="_blank"><img src="{{ theme_url }}/images/stumble-upon.png" alt="stumble-upon-share" width="112" height="112"></a><a href="http://twitter.com/home?status={{ page.title }}-{{ page.url(true) }}" target="_blank"><img src="{{ theme_url }}/images/twitter.png" alt="twitter-share" width="112" height="112"></a>
         <div class="clear"></div>
       </div>
     </div>
@@ -99,8 +99,8 @@
 </div>
 </div>
 <script type="text/javascript">
-var post_title="Sedial eiusmod tempor",
-post_url="http://sora-article-soratemplates.blogspot.in/2014/08/sedial-eiusmod-tempor_2.html",
+var post_title="{{ page.title }}",
+post_url="{{ page.url(true) }}",
 author_name="Sora Templates",
 author_url="https://plus.google.com/104219125408123734587",
 comment="0",

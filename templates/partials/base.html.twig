@@ -11,6 +11,7 @@
         <link href='http://fonts.googleapis.com/css?family=Arvo%3Aregular%2Citalic%2C700%2C700italic&subset=latin&ver=3.9.1' id='Arvo-google-font-css' media='all' rel='stylesheet' type='text/css'/>
         <link href='//maxcdn.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css' rel='stylesheet'/>
         {% block stylesheets %}
+            {% do assets.addCss('theme://css/widget_css_2_bundle.css') %}
             {% do assets.addCss('theme://css/style.css') %}
             {% if browser.getBrowser == 'msie' and browser.getVersion >= 7 and browser.getVersion <= 8 %}
                 {% do assets.addCss('theme://css/ie.css') %}
@@ -74,18 +75,8 @@
             {% endblock %}
 
             {% block footer %}
-                <footer id="footer">
-                    <div class="totop">
-                        <span><a href="#" id="toTop"><i class="fa fa-arrow-up"></i></a></span>
-                    </div>
-                    <p><a href="http://getgrav.org">Grav</a> was <i class="fa fa-code"></i> with <i class="fa fa-heart"></i> by <a href="http://www.rockettheme.com">RocketTheme</a>.</p>
-                </footer>
+                {% include 'partials/footer.html.twig' %}
             {% endblock %}
-        </div>
-        <div class="sb-slidebar sb-left sb-width-thin">
-            <div id="panel">
-                {% include 'partials/navigation.html.twig' %}
-            </div>
         </div>
 
         {% block bottom_js %}
