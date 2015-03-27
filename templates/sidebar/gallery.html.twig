@@ -1,9 +1,10 @@
 <div class="widget HTML">
     <h2 class="title">{{ module.title }}</h2>
     <div class="widget-content">
+     {% if module.header.gallery %}
         <div class="gdlr-instagram-item-head gdlr-nav-container">
             <i class="icon-angle-left gdlr-flex-prev"></i>
-            <a href="http://instagram.com/" target="_blank">
+            <a href="{{ base_url_absolute }}" target="_blank">
                 <i class="icon-instagram"></i>
             </a>
             <i class="icon-angle-right gdlr-flex-next"></i>
@@ -14,7 +15,7 @@
                     <ul class="slides">
                         {% for images in module.header.gallery %}
                             <li>
-                                <a href="{{ images.url }}" target="_blank">
+                                <a href="{% if module.header.image_as_link %}{{ module.media.images[images.image] }}{% else %}{{ images.url }}{% endif %}" target="_blank">
                                     <img src="{{ module.media.images[images.image] }}" alt="{{ images.image }}">
                                 </a>
                             </li>
@@ -23,6 +24,7 @@
                 </div>
             </div>
         </div>
-         {{ module.content }}
-    </div>
+    {% endif %}
+    {{ module.content }}
+</div>
 </div>
