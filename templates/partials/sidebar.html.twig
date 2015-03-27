@@ -1,3 +1,9 @@
+{% for module in page.collection({'items':{'@taxonomy.category': 'sidebar'},'order': {'by': 'default', 'dir': 'asc'}}) %}
+        {% if module.template %}
+            {% include 'sidebar/' ~ module.template ~ '.html.twig' %}
+        {% endif %}
+{% endfor %}
+
 {% if config.plugins.simplesearch.enabled %}
 <div class="widget HTML">
     <h2 class="title">SimpleSearch</h2>
