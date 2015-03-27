@@ -1,0 +1,28 @@
+<div class="widget HTML">
+    <h2 class="title">{{ module.title }}</h2>
+    <div class="widget-content">
+        <div class="gdlr-instagram-item-head gdlr-nav-container">
+            <i class="icon-angle-left gdlr-flex-prev"></i>
+            <a href="http://instagram.com/" target="_blank">
+                <i class="icon-instagram"></i>
+            </a>
+            <i class="icon-angle-right gdlr-flex-next"></i>
+        </div>
+        <div class="gdlr-instagram-item-wrapper">
+            <div class="flexslider" data-type="carousel" data-nav-container="gdlr-instagram-item-wrapper">
+                <div class="flex-viewport" >
+                    <ul class="slides">
+                        {% for images in module.header.gallery %}
+                            <li>
+                                <a href="{{ images.url }}" target="_blank">
+                                    <img src="{{ module.media.images[images.image] }}" alt="{{ images.image }}">
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+         {{ module.content }}
+    </div>
+</div>

@@ -2506,7 +2506,7 @@ All this is done for any sub-level being entered.
 *********************************/
 .flexslider {margin: 0; padding: 0; zoom: 1; }
 .flexslider .slides > li {display: none; -webkit-backface-visibility: hidden; position: relative; } /* Hide the slides before the JS is loaded. Avoids image jumping */
-.flexslider .slides img {width: 100%; display: block;}
+.flexslider .slides img {width: 90%; display: block;}
 .flex-pauseplay span {text-transform: capitalize;}
 
 /* Clearfix for the .slides element */
