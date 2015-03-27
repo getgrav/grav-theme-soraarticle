@@ -18,7 +18,7 @@
     <div class='gdlr-nav-search-container container'>
             <i class='icon-search'></i>
             <div class='search-text' id='search-text2'>
-                <input autocomplete='off' data-default='Type keywords...' name='q' type='text' value="{{ query }}" data-search-input="{{ base_url_relative }}{{ config.plugins.simplesearch.route}}/query"/><input type='hidden' value='max-results=6'/>
+                <input autocomplete='off' data-default='Type keywords...' name='q' type='text' value="{{ query }}" data-search-input2="{{ base_url_relative }}{{ config.plugins.simplesearch.route}}/query"/><input type='hidden' value='max-results=6'/>
             </div>
             <div class='clear'></div>
     </div>
@@ -26,12 +26,12 @@
 
 <script>
 jQuery(document).ready(function($){
-    var input = $('[data-search-input]');
+    var input = $('[data-search-input2]');
 
     input.on('keypress', function(event) {
         if (event.which == 13 && input.val().length > 3) {
             event.preventDefault();
-            window.location.href = input.data('search-input') + '{{ config.system.param_sep }}' + input.val();
+            window.location.href = input.data('search-input2') + '{{ config.system.param_sep }}' + input.val();
         }
     });
 });
