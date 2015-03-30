@@ -18,11 +18,7 @@
           <div id="2297314009206748142">
             <div class="blog-content-wrapper">
               <div class="gdlr-blog-thumbnail">
-                {% if big_header %}
-                  {{ page.media.images|first.cropResize(900,600).html }}
-                  {% else %}
-                  {{ page.media.images|first.cropZoom(900,300).html }}
-                {% endif %}
+                  {{ page.media.images|first.cropZoom(640,430).html }}
 
                 <div class="gdlr-sticky-banner">{{ page.date|date("G:i") }} {{ page.date|date("A") }}</div>
               </div>
@@ -50,7 +46,7 @@
                       </div>
                     {% endif %}
 
-                    <div class="blog-info blog-author"><i class="icon-user"></i>{{ page.header.author }}</div>
+                    <div class="blog-info blog-author"><i class="icon-user"></i>{% if page.header.author.name %}{{ page.header.author.name }}{% else %}{{ site.author.name }}{% endif %}</div>
                     <span class="gdlr-seperator">/</span>
                     <div class="blog-info blog-comments"><i class="icon-comments-alt"></i><a href="{{ page.url(true) }}">0 Comments</a></div>
                     <div class="clear"></div>
@@ -101,6 +97,47 @@
                        </div>
                      {% endif %}
 
+                     {% if page.activeChild() %}
+                       <div class="gdlr-post-author">
+                        <h3 class="post-author-title">About Post Author</h3>
+                        <div class="clear"></div>
+                        {% if page.header.author %}
+                          {% if page.header.author.logo %}
+                            <div class="post-author-avartar">
+                              <img src="{{ page.media.images[header.author.logo] }}" class="avatar avatar-125 photo" />
+                            </div>
+                          {% endif %}
+                          <div class="post-author-content">
+                            <h4 class="post-author">
+                              {% if page.header.author.url %}
+                                <a href="{{ page.header.author.url }}" rel="author">{{ page.header.author.name }}</a>
+                                {% else %}
+                                {{ page.header.author.name }}
+                              {% endif %}
+                            </h4>
+                            {{ page.header.author.description }}
+                          </div>
+                          {% else %}
+                          {% if site.author.logo %}
+                            <div class="post-author-avartar">
+                              <img src="{{ theme_url }}/images/{{ site.author.logo }}" class="avatar avatar-125 photo" />
+                            </div>
+                          {% endif %}
+                          <div class="post-author-content">
+                            <h4 class="post-author">
+                              {% if site.author.url %}
+                                <a href="{{ site.author.url }}" rel="author">{{ site.author.name }}</a>
+                                {% else %}
+                                {{ site.author.name }}
+                              {% endif %}
+                            </h4>
+                            {{ site.author.description }}
+                          </div>
+                        {% endif %}
+
+                        <div class="clear"></div>
+                      </div>
+                    {% endif %}
                     </div>
                   </div>
                 </div>
