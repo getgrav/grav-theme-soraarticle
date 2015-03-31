@@ -7,10 +7,10 @@
         {% include 'partials/metadata.html.twig' %}
         <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
         <link rel="icon" type="image/png" href="{{ theme_url }}/images/favicon.png" />
-        <link href='http://fonts.googleapis.com/css?family=Merriweather%3A300%2C300italic%2Cregular%2Citalic%2C700%2C700italic%2C900%2C900italic&subset=latin%2Clatin-ext&ver=3.9.1' id='Merriweather-google-font-css' media='all' rel='stylesheet' type='text/css'/>
-        <link href='http://fonts.googleapis.com/css?family=Arvo%3Aregular%2Citalic%2C700%2C700italic&subset=latin&ver=3.9.1' id='Arvo-google-font-css' media='all' rel='stylesheet' type='text/css'/>
+        <link href='http://fonts.googleapis.com/css?family=Merriweather%3A300%2C300italic%2Cregular%2Citalic%2C700%2C700italic%2C900%2C900italic&amp;subset=latin%2Clatin-ext&amp;ver=3.9.1' id='Merriweather-google-font-css' media='all' rel='stylesheet' type='text/css'/>
+        <link href='http://fonts.googleapis.com/css?family=Arvo%3Aregular%2Citalic%2C700%2C700italic&amp;subset=latin&amp;ver=3.9.1' id='Arvo-google-font-css' media='all' rel='stylesheet' type='text/css'/>
         <link href='//maxcdn.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css' rel='stylesheet'/>
-        <meta name="google-translate-customization" content="{{ site.google_translate_token }}"></meta>
+        <meta name="google-translate-customization" content="{{ site.google_translate_token }}">
         {% block stylesheets %}
             {% do assets.addCss('theme://css/widget_css_2_bundle.css') %}
             {% do assets.addCss('theme://css/style.css') %}
@@ -42,7 +42,7 @@
                             <div class='header section' id='header'><div class='widget Header' id='Header1'>
                                 <div id='header-inner'>
                                     <a href='{{ base_url_absolute }}' style='display: block'>
-                                        <img height='104px; ' id='Header1_headerimg' src='{{ theme_url }}/images/logo.png' style='display: block' width='500px; '/>
+                                        <img id='Header1_headerimg' src='{{ theme_url }}/images/logo.png' style='display: block' alt='{{ site.title }}' />
                                     </a>
                                 </div>
                             </div></div>

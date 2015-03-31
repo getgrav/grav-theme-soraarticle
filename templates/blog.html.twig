@@ -29,12 +29,12 @@
                                             <div class="date-outer">
                                                 <div class="date-posts">
                                                     {% for child in collection %}
-                                                     {% include 'partials/blog_item.html.twig' with {'page':child, 'truncate':true} %}
-                                                 {% endfor %}
+                                                        {% include 'partials/blog_item.html.twig' with {'page':child, 'truncate':true} %}
+                                                    {% endfor %}
 
-                                                 {% if config.plugins.pagination.enabled and collection.params.pagination %}
-                                                    {% include 'pagination.html.twig' with {'pagination':collection.params.pagination} %}
-                                                {% endif %}
+                                                    {% if config.plugins.pagination.enabled and collection.params.pagination %}
+                                                       {% include 'pagination.html.twig' with {'pagination':collection.params.pagination} %}
+                                                    {% endif %}
                                             </div>
                                         </div>
                                     </div>

@@ -15,7 +15,6 @@
               {{ page.date|date("Y") }}
             </div>
           </div>
-          <div id="2297314009206748142">
             <div class="blog-content-wrapper">
               <div class="gdlr-blog-thumbnail">
                   {{ page.media.images|first.cropZoom(640,430).html }}
@@ -52,39 +51,25 @@
                     <div class="clear"></div>
                   </div>
                 </header>
-                <!-- entry-header -->
                 <div class="gdlr-blog-content">
                   {% if page.header.continue_link is sameas(false) %}
-                    <p>{{ page.content }}</p>
+                    {{ page.content }}
                     {% if not truncate %}
                       {% set show_prev_next = true %}
                       {% endif %}
                       {% elseif truncate and page.summary != page.content %}
-                      <p>{{ page.summary }}</p>
+                      {{ page.summary }}
                       <p><a href="{{ page.url }}" class="more-link"><span class="gdlr-button with-border excerpt-read-more">Read More</span></a></p>
                       {% elseif truncate %}
-                      <p>{{ page.content|truncate(550) }}</p>
+                      {{ page.content|truncate(550) }}
                       <p><a href="{{ page.url }}" class="more-link"><span class="gdlr-button with-border excerpt-read-more">Read More</span></a></p>
                       {% else %}
-                      <p>{{ page.content }}</p>
+                      {{ page.content }}
                       {% set show_prev_next = true %}
                       {% endif %}
 
-                      {% if show_prev_next %}
-
-                        <p class="prev-next">
-                          {% if not page.isFirst %}
-                            <a class="button" href="{{ page.nextSibling.url }}"><i class="fa fa-chevron-left"></i> Next Post</a>
-                          {% endif %}
-
-                          {% if not page.isLast %}
-                            <a class="button" href="{{ page.prevSibling.url }}">Previous Post <i class="fa fa-chevron-right"></i></a>
-                          {% endif %}
-                        </p>
-                      {% endif %}
-
                       <div class="gdlr-social-share">
-                        <a href="http://digg.com/submit?url={{ page.url(true) }}&amp;title={{ page.title }}" target="_blank"><img src="{{ theme_url }}/images/digg.png" alt="digg-share" width="112" height="112"></a><a href="http://www.facebook.com/share.php?u={{ page.url(true) }}" target="_blank"><img src="{{ theme_url }}/images/facebook.png" alt="facebook-share" width="112" height="112"></a><a href="http://www.linkedin.com/shareArticle?mini=true&amp;url={{ page.url(true) }}&amp;title={{ page.title }}" target="_blank"><img src="{{ theme_url }}/images/linkedin.png" alt="linked-share" width="112" height="112"></a><a href="http://www.tumblr.com/share/link?url={{ page.url(true) }}&amp;name={{ page.title }}" target="_blank"><img src="{{ theme_url }}/images/tumblr.png" alt="tumblr-share" width="112" height="112"></a><a href="http://reddit.com/submit?url={{ page.url(true) }}&amp;title={{ page.title }}" target="_blank"><img src="{{ theme_url }}/images/reddit.png" alt="reddit-share" width="112" height="112"></a><a href="http://www.stumbleupon.com/submit?url={{ page.url(true) }}&amp;title={{ page.title }}" target="_blank"><img src="{{ theme_url }}/images/stumble-upon.png" alt="stumble-upon-share" width="112" height="112"></a><a href="http://twitter.com/home?status={{ page.title }}-{{ page.url(true) }}" target="_blank"><img src="{{ theme_url }}/images/twitter.png" alt="twitter-share" width="112" height="112"></a>
+                        <a href="http://digg.com/submit?url={{ page.url(true) }}&amp;title={{ page.title|replace({' ': "%20"}) }}" target="_blank"><img src="{{ theme_url }}/images/digg.png" alt="digg-share" width="112" height="112"></a><a href="http://www.facebook.com/share.php?u={{ page.url(true) }}" target="_blank"><img src="{{ theme_url }}/images/facebook.png" alt="facebook-share" width="112" height="112"></a><a href="http://www.linkedin.com/shareArticle?mini=true&amp;url={{ page.url(true) }}&amp;title={{ page.title|replace({' ': "%20"}) }}" target="_blank"><img src="{{ theme_url }}/images/linkedin.png" alt="linked-share" width="112" height="112"></a><a href="http://www.tumblr.com/share/link?url={{ page.url(true) }}&amp;name={{ page.title|replace({' ': "%20"}) }}" target="_blank"><img src="{{ theme_url }}/images/tumblr.png" alt="tumblr-share" width="112" height="112"></a><a href="http://reddit.com/submit?url={{ page.url(true) }}&amp;title={{ page.title|replace({' ': "%20"}) }}" target="_blank"><img src="{{ theme_url }}/images/reddit.png" alt="reddit-share" width="112" height="112"></a><a href="http://www.stumbleupon.com/submit?url={{ page.url(true) }}&amp;title={{ page.title|replace({' ': "%20"}) }}" target="_blank"><img src="{{ theme_url }}/images/stumble-upon.png" alt="stumble-upon-share" width="112" height="112"></a><a href="http://twitter.com/home?status={{ page.title|replace({' ': "%20"}) }}-{{ page.url(true) }}" target="_blank"><img src="{{ theme_url }}/images/twitter.png" alt="twitter-share" width="112" height="112"></a>
                         <div class="clear"></div>
                       </div>
 
@@ -141,10 +126,27 @@
                     </div>
                   </div>
                 </div>
-              </div>
               <div class="clear"></div>
             </div>
           </article>
         </div>
       </div>
     </div>
+
+    {% if show_prev_next %}
+
+      <div class="blog-pager" id="blog-pager">
+        {% if not page.isFirst %}
+          <span id="blog-pager-newer-link">
+            <a class="blog-pager-newer-link" href="{{ page.nextSibling.url }}"><i class="fa fa-chevron-left"></i> Newer Post</a>
+          </span>
+        {% endif %}
+
+        {% if not page.isLast %}
+         <span id="blog-pager-older-link">
+          <a class="blog-pager-older-link" href="{{ page.prevSibling.url }}">Older Post <i class="fa fa-chevron-right"></i></a>
+        </span>
+      {% endif %}
+      <a class="home-link" href="{{ base_url_absolute }}">Home</a>
+    </div>
+  {% endif %}
