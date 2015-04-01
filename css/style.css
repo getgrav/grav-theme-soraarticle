@@ -1193,6 +1193,7 @@ a.social-shortcode { max-width: 40px; margin-right: 10px; margin-bottom: 10px; d
 
 /*--- Video ---*/
 div.gdlr-video-widget { margin-bottom: 10px; }
+div.gdlr-blog-thumbnail.gdlr-video {background: transparent;}
 
 /*--- instagram ---*/
 .gdlr-instagram-widget{ list-style: none; margin: 0px; overflow: hidden;    }

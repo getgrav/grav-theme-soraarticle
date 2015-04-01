@@ -3,6 +3,7 @@
         <div class='gdlr-navigation-gimmick' id='gdlr-navigation-gimmick'></div>
         <div class='gdlr-navigation-wrapper'><nav class='gdlr-navigation' id='gdlr-main-navigation' role='navigation'>
             <ul class='sf-menu gdlr-main-menu' id='menu-main-menu-1'>
+            <li class='menu-item menu-item-type-post_type gdlr-normal-menu'><a href='{{ base_url_absolute }}'>Home</a></li>
            {% for item in site.mainmenu %}
             <li class='menu-item menu-item-type-post_type gdlr-normal-menu'><a href='{{ item.url }}'>{{ item.text }}</a></li>
         {% endfor %}
