@@ -45,7 +45,23 @@
                       </div>
                     {% endif %}
 
-                    <div class="blog-info blog-author"><i class="icon-user"></i>{% if page.header.author.name %}{{ page.header.author.name }}{% else %}{{ site.author.name }}{% endif %}</div>
+                    {% if page.header.author.name or site.author.name %}
+                      <div class="blog-info blog-author"><i class="icon-user"></i>
+                        {% if page.header.author.name %}
+                          {% if page.header.author.url %}
+                           <a href="{{ page.header.author.url }}">{{ page.header.author.name }}</a>
+                           {% else %}  
+                           {{ page.header.author.name }}
+                         {% endif %}
+                         {% else %}
+                         {% if site.author.url %}
+                           <a href="{{ site.author.url }}">{{ site.author.name }}</a>
+                           {% else %}
+                           {{ site.author.name }}
+                         {% endif %}
+                       {% endif %}
+                     </div>
+                   {% endif %}
                     <span class="gdlr-seperator">/</span>
                     <div class="blog-info blog-comments"><i class="icon-comments-alt"></i><a href="{{ page.url(true) }}">0 Comments</a></div>
                     <div class="clear"></div>

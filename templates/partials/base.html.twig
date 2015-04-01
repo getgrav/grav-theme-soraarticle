@@ -14,6 +14,7 @@
         {% block stylesheets %}
             {% do assets.addCss('theme://css/widget_css_2_bundle.css') %}
             {% do assets.addCss('theme://css/style.css') %}
+            {% do assets.addCss('theme://css/lightbox.css') %}
             {% if browser.getBrowser == 'msie' and browser.getVersion >= 7 and browser.getVersion <= 8 %}
                 {% do assets.addCss('theme://css/ie.css') %}
             {% endif %}
@@ -23,6 +24,7 @@
         {% block javascripts %}
             {% do assets.add('jquery',101) %}
             {% do assets.add('theme://js/jquery-migrate-1.2.1.min.js') %}
+            {% do assets.add('theme://js/lightbox.min.js') %}
         {% endblock %}
         {{ assets.js() }}
 
