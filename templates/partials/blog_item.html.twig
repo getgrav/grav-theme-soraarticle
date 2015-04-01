@@ -148,6 +148,18 @@
                   </div>
                 </div>
               <div class="clear"></div>
+
+              {% if page.activeChild() %}
+                {% if config.plugins.jscomments.enabled %}
+                  <div class="comments" id="comments">
+                    <div class="comment-respond">
+                      <h3 class="comment-reply-title">Comments:</h3>
+                      {{ jscomments('provider_name', {'shortname': 'comments'})}}
+                    </div>
+                  </div>
+                {% endif %}
+              {% endif %}
+
             </div>
           </article>
         </div>
@@ -155,7 +167,6 @@
     </div>
 
     {% if show_prev_next %}
-
       <div class="blog-pager" id="blog-pager">
         {% if not page.isFirst %}
           <span id="blog-pager-newer-link">
