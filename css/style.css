@@ -5965,3 +5965,42 @@ width:200px;
 float:left;
 }
 .recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}
+
+.contact {
+  padding-left: 40px;
+}
+.contact button.close {
+    display: none;
+}
+.contact .alert {
+   margin-top: 15px;
+}
+
+.contact input {
+  width: 50%;
+  line-height: 2rem;
+  border-radius: 0;
+  margin-bottom: 0.85rem;
+  padding: 0.425rem 0.425rem;
+  display: block;
+}
+.contact textarea {
+  min-width: 100%;
+  min-height: 25rem;
+  border-radius: 0;
+  margin-bottom: 0.85rem;
+  padding: 0.425rem 0.425rem;
+  resize: vertical;
+}
+.contact label {
+  text-align: left;
+  margin-bottom: 0.425rem;
+  display: block;
+}
+
+.contact select {
+  width: auto;
+  max-width: 100%;
+  margin-bottom: 1.7rem;
+  display: block;
+}
