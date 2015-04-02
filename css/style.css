@@ -2569,6 +2569,8 @@ html body{ min-width: 300px; }
 /*--- tablet ---*/
 @media only screen and (max-width: 959px) {
     body .container{ max-width: 768px; }    
+    body .goog-logo-link img {width: 30px;}
+    body .post-author-avartar {display: none;}
     body .body-wrapper.gdlr-boxed-style { max-width: 808px; }
     
     .flex-direction-nav .flex-prev, .flex-direction-nav .flex-next { opacity: 1; }
@@ -2592,6 +2594,7 @@ html body{ min-width: 300px; }
 @media only screen and (max-width: 767px) {
     html body { font-size: 13px; }
     body .container{ max-width: 420px; }
+    body .four1 {width: 100%;}
     body .body-wrapper.gdlr-boxed-style { max-width: 460px; }
     body .body-wrapper{ overflow: hidden; }
     
@@ -2695,6 +2698,8 @@ html body{ min-width: 300px; }
 /*--- mobile portrait style ---*/
 @media only screen and (max-width: 419px) {
     body .container{ max-width: 300px; }
+    body .four1 {width: 100%;}
+    body .goog-logo-link img {width: 50px;}
     body .body-wrapper.gdlr-boxed-style { max-width: 340px; }
 
     .dl-menuwrapper .dl-menu, .dl-menuwrapper > .dl-submenu{ width: 270px; }
