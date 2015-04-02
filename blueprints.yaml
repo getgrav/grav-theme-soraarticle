@@ -10,7 +10,7 @@ homepage: https://github.com/getgrav/grav-theme-soraarticle
 demo: http://demo.getgrav.org/soraarticle-skeleton
 keywords: soraarticle, theme, onepage, modern, fast, responsive, html5, css3
 bugs: https://github.com/getgrav/grav-theme-soraarticle/issues
-license: MIT
+license: CC BY 3.0
 
 form:
   validation: strict

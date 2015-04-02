@@ -2,9 +2,9 @@
     "name": "getgrav/grav-theme-soraarticle",
     "type": "grav-theme",
     "description": "Sora Article is a minimal Theme designed for blogger, ported to Grav.",
-    "keywords": ["theme","grav", "soraarticle"],
+    "keywords": ["theme","grav", "soraarticle", "blog"],
     "homepage": "http://getgrav.org",
-    "license": "MIT",
+    "license": "CC BY 3.0",
     "support": {
         "irc": "irc://irc.freenode.org/grav"
     },
