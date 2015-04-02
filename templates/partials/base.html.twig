@@ -25,6 +25,7 @@
             {% do assets.add('jquery',101) %}
             {% do assets.add('theme://js/jquery-migrate-1.2.1.min.js') %}
             {% do assets.add('theme://js/lightbox.min.js') %}
+            {% do assets.add('theme://js/script.js') %}
         {% endblock %}
         {{ assets.js() }}
 
@@ -81,11 +82,6 @@
                 {% include 'partials/footer.html.twig' %}
             {% endblock %}
         </div>
-
-        {% block bottom_js %}
-            {% include 'partials/bottom_js.html.twig' %}
-        {% endblock %}
-
 
     </body>
     </html>
