@@ -15,8 +15,8 @@
                     <ul class="slides">
                         {% for images in module.header.gallery %}
                             <li>
-                                <a href="{% if module.header.image_as_link %}{{ module.media.images[images.image] }}{% else %}{{ images.url }}{% endif %}" target="_blank" data-lightbox="gallery" data-title="images.image">
-                                    <img src="{{ module.media.images[images.image] }}" alt="{{ images.image }}">
+                                <a href="{% if module.header.image_as_link %}{{ module.media.images[images.image].url }}{% else %}{{ images.url }}{% endif %}" target="_blank" data-lightbox="gallery" data-title="images.image">
+                                    {{ module.media.images[images.image] }}
                                 </a>
                             </li>
                         {% endfor %}
