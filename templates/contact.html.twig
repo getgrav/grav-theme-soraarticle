@@ -13,8 +13,8 @@
                <h3 class="gdlr-blog-title">{{ page.header.title }}</h3>
                {% if config.plugins.simple_form.enabled %}
                 {% set simple_form_config = page.header.simple_form ?: config.themes.soraarticle.simple_form %}
-                    {{ simple_form(simple_form_config) }}
-                {% endif %}
+                  {{ simple_form(simple_form_config) }}
+              {% endif %}
 
                 {{ page.content }}
                 <br />
