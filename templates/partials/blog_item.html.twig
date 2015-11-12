@@ -57,7 +57,7 @@
                         {% if page.header.author.name %}
                           {% if page.header.author.url %}
                            <a href="{{ page.header.author.url }}">{{ page.header.author.name }}</a>
-                           {% else %}  
+                           {% else %}
                            {{ page.header.author.name }}
                          {% endif %}
                          {% else %}
@@ -149,12 +149,12 @@
                 </div>
               <div class="clear"></div>
 
-              {% if page.activeChild() %}
-                {% if config.plugins.jscomments.enabled %}
+                {% if not truncate %}
+                {% if config.plugins.jscomments.enabled and config.plugins.jscomments.provider %}
                   <div class="comments" id="comments">
                     <div class="comment-respond">
                       <h3 class="comment-reply-title">Comments:</h3>
-                      {{ jscomments('provider_name', {'shortname': 'comments'})}}
+                    {{ jscomments(config.plugins.jscomments.provider) }}
                     </div>
                   </div>
                 {% endif %}
