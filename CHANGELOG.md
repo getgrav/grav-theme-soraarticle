@@ -1,3 +1,10 @@
+# v1.1.3
+## 11/12/2015
+
+1. [](#new)
+    * Fix for responsive videos
+    * Couple fixes for JSComments
+
 # v1.1.2
 ## 09/21/2015
 
