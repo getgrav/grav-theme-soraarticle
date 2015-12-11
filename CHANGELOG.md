@@ -1,3 +1,11 @@
+# v1.2.1
+## 12/11/2015
+
+1. [](#bugfix)
+    * Fix form template with nonce support
+    * Support configurable param separator
+
+
 # v1.2.0
 ## 11/12/2015
 
