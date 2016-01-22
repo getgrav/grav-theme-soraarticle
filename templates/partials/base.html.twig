@@ -35,7 +35,7 @@
 
     {% endblock head %}
 </head>
-<body id="top" class="page page-template-default">
+<body id="top" class="page page-template-default {{ page.header.body_classes }}">
     <div class="body-wrapper  float-menu gdlr-pattern-background">
         {% block header %}
             <header class='gdlr-header-wrapper'>
