@@ -1,6 +1,6 @@
 {% for module in page.collection({'items':{'@taxonomy.category': 'sidebar'},'order': {'by': 'default', 'dir': 'asc'}}) %}
     {% if module.template %}
-        {% include 'sidebar/' ~ module.template ~ '.html.twig' %}
+        {% include module.template ~ '.html.twig' %}
     {% endif %}
 {% endfor %}
 
@@ -23,7 +23,7 @@
 {% if config.plugins.archives.enabled %}
     <div class="widget HTML">
         <h2 class="title">Archives</h2>
-        <div class="widget-content">	
+        <div class="widget-content">
             {% include 'partials/archives.html.twig' %}
         </div>
     </div>
