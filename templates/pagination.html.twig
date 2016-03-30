@@ -1,5 +1,7 @@
 {% if pagination|length > 1 %}
-
+{% if base_url == '' %}
+    {% set base_url = '/' %}
+{% endif %}
 <div class="blog-pager" id="blog-pager">
     <div class="showpageArea">
     {% if pagination.hasPrev %}
@@ -22,5 +24,4 @@
     {% endif %}
     </div>
 </div>
-
 {% endif %}
