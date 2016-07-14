@@ -1,3 +1,15 @@
+# v1.4.0
+## 07/14/2016
+
+1. [](#improved)
+    * Remove unneeded streams from Theme YAML
+    * Delete unused composer.json
+1. [](#bugfix)
+    * Fix form action for forms on multilanguage pages
+    * Remove unneeded default form template override
+    * Fix setting the page language in the html tag
+    * Fix pagination
+    
 # v1.3.0
 ## 01/22/2016
 
