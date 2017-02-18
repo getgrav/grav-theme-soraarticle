@@ -51,7 +51,11 @@
                             </div></div>
                             <div class='gdlr-responsive-navigation dl-menuwrapper' id='gdlr-responsive-navigation'><button class='dl-trigger'>Open Menu</button><ul class='dl-menu gdlr-main-mobile-menu' id='menu-main-menu'>
                                 {% for item in site.mainmenu %}
-                                    <li class='menu-item menu-item-type-post_type'><a href='{{ item.url }}'>{{ item.text }}</a></li>
+                                    {% if item.url | contains('page:') %}
+                    					<li class='menu-item menu-item-type-post_type'><a href='{{ base_url_absolute }}/{{ item.url|replace({"page:":''}) }}'>{{ item.text }}</a></li>
+                    				{% else %}
+                   						<li class='menu-item menu-item-type-post_type'><a href='{{ item.url }}'>{{ item.text }}</a>/li>
+                					{% endif %}
                                 {% endfor %}
                             </ul></div>
                         </div>
