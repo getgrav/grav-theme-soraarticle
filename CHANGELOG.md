@@ -1,5 +1,5 @@
 # v1.4.1
-## 02/xx/2017
+## 02/26/2017
 
 1. [](#improved)
     * Updated base.html.twig to fix menu for support of full qualified URLs [#7](https://github.com/getgrav/grav-theme-soraarticle/pull/7)
