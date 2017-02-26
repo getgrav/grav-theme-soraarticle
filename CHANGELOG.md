@@ -1,3 +1,9 @@
+# v1.4.1
+## 02/xx/2017
+
+1. [](#improved)
+    * Updated base.html.twig to fix menu for support of full qualified URLs [#7](https://github.com/getgrav/grav-theme-soraarticle/pull/7)
+
 # v1.4.0
 ## 07/14/2016
 
@@ -9,7 +15,7 @@
     * Remove unneeded default form template override
     * Fix setting the page language in the html tag
     * Fix pagination
-    
+
 # v1.3.0
 ## 01/22/2016
 
