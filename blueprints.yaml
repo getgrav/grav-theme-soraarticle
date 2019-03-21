@@ -1,5 +1,5 @@
 name: SoraArticle
-version: 1.4.1
+version: 1.5.0
 description: "Sora Article is a minimal Theme designed for the discerning blogger, ported to Grav."
 icon: group
 author:
@@ -11,3 +11,6 @@ demo: http://demo.getgrav.org/soraarticle-skeleton
 keywords: soraarticle, theme, onepage, modern, fast, responsive, html5, css3
 bugs: https://github.com/getgrav/grav-theme-soraarticle/issues
 license: CC BY 3.0
+
+dependencies:
+  - { name: grav, version: '>=1.5.10' }
