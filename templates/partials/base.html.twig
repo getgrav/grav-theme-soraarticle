@@ -57,7 +57,7 @@
                                     {% if item.url | contains('page:') %}
                     					<li class='menu-item menu-item-type-post_type'><a href='{{ base_url_absolute }}/{{ item.url|replace({"page:":''}) }}'>{{ item.text }}</a></li>
                     				{% else %}
-                   						<li class='menu-item menu-item-type-post_type'><a href='{{ item.url }}'>{{ item.text }}</a>/li>
+                   						<li class='menu-item menu-item-type-post_type'><a href='{{ item.url }}'>{{ item.text }}</a></li>
                 					{% endif %}
                                 {% endfor %}
                             </ul></div>
