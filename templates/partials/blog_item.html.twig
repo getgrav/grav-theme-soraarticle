@@ -22,7 +22,7 @@
                   {% elseif page.header.soundcloud %}
                   <iframe width="100%" height="403" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/{{ page.header.soundcloud }}&amp;auto_play=false&amp;hide_related=true&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true&amp;buying=false"></iframe>
                   {% else %}
-                  {{ page.media.images|first.cropZoom(640,430).html }}
+                  {{ page.media.images|first.cropZoom(640,430).html|raw }}
                 {% endif %}
                {% if not page.header.hide_date %}
                 <div class="gdlr-sticky-banner">{{ page.date|date("G:i") }} {{ page.date|date("A") }}</div>
@@ -33,7 +33,7 @@
 
                   {% if page.header.link %}
                     <h3 class="gdlr-blog-title">
-                      {% if page.header.continue_link is not sameas(false) %}
+                      {% if page.header.continue_link is not same as(false) %}
                         <a href="{{ page.url }}"><i class="fa fa-angle-double-right"></i></a>
                       {% endif %}
                       <a href="{{ page.header.link }}">{{ page.title }}</a>
@@ -73,19 +73,19 @@
                   </div>
                 </header>
                 <div class="gdlr-blog-content">
-                  {% if page.header.continue_link is sameas(false) %}
-                    {{ page.content }}
+                  {% if page.header.continue_link is same as(false) %}
+                    {{ page.content|raw }}
                     {% if not truncate %}
                       {% set show_prev_next = true %}
                       {% endif %}
                       {% elseif truncate and page.summary != page.content %}
-                      {{ page.summary }}
+                      {{ page.summary|raw }}
                       <p><a href="{{ page.url }}" class="more-link"><span class="gdlr-button with-border excerpt-read-more">Read More</span></a></p>
                       {% elseif truncate %}
-                      {{ page.content|truncate(550) }}
+                      {{ page.content|truncate(550)|raw }}
                       <p><a href="{{ page.url }}" class="more-link"><span class="gdlr-button with-border excerpt-read-more">Read More</span></a></p>
                       {% else %}
-                      {{ page.content }}
+                      {{ page.content|raw }}
                       {% set show_prev_next = true %}
                       {% endif %}
 

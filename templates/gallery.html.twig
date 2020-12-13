@@ -16,7 +16,7 @@
                         {% for images in module.header.gallery %}
                             <li>
                                 <a href="{% if module.header.image_as_link %}{{ module.media.images[images.image].url }}{% else %}{{ images.url }}{% endif %}" target="_blank" data-lightbox="gallery" data-title="images.image">
-                                    {{ module.media.images[images.image] }}
+                                    {{ module.media.images[images.image]|raw }}
                                 </a>
                             </li>
                         {% endfor %}
@@ -25,6 +25,6 @@
             </div>
         </div>
     {% endif %}
-    {{ module.content }}
+    {{ module.content|raw }}
 </div>
 </div>

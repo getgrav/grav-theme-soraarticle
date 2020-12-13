@@ -11,7 +11,7 @@
         <div class="gdlr-ux gdlr-blog-full-ux">
             <div class="blog-content-inner-wrapper contact">
                <h3 class="gdlr-blog-title">{{ page.header.title }}</h3>
-               {{ content }}
+               {{ content|raw }}
                {% if config.plugins.form.enabled %}
                   {% include "forms/form.html.twig" %}
                {% endif  %}

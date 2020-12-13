@@ -12,7 +12,7 @@
             <div class="blog-content-inner-wrapper contact">
                <h3 class="gdlr-blog-title">{{ form.message }}</h3>
                <p>Here is the summary of what you wrote to us:</p>
-               {{ content }}
+               {{ content|raw }}
                {% if config.plugins.form.enabled %}
                   {% include "forms/data.html.twig" %}
                {% endif  %}
