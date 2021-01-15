@@ -8,7 +8,7 @@
 	{% include 'partials/blog_sidebar_header.html.twig' %}
 			<h1>Error {{ page.header.http_response_code }}</h1>
 			<p>
-				{{ page.content }}
+				{{ page.content|raw }}
 			</p>
     {% include 'partials/blog_sidebar_footer.html.twig' %}
 {% endblock %}

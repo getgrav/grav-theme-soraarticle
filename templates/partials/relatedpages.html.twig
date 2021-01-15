@@ -5,7 +5,7 @@
              <div class="related-post-widget six columns">
                 <div class="related-post-widget-thumbnail">
                     {% if related.media.images|first %}
-                        {{ related.media.images|first.cropResize(150,150).html }}
+                        {{ related.media.images|first.cropResize(150,150).html|raw }}
                         {% else %}
                         <img src='{{ theme_url }}/images/no-image.png' style='display: block' >
                     {% endif %}
