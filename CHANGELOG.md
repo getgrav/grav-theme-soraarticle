@@ -1,3 +1,11 @@
+# v1.5.1
+## 01/15/2021
+
+1. [](#improved)
+    * Fixed autoescaping in preparation for Grav 1.7
+1. [](#bugfix)
+    * Fixed a broken closing tag [#13](https://github.com/getgrav/grav-theme-soraarticle/pull/13)
+
 # v1.5.0
 ## 03/21/2019
 
